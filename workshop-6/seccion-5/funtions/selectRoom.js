@@ -5,7 +5,8 @@ const selectRoom = (rooms, roomTypes) => {
 
     const selectedRoom = prompt("Ingrese el nombre de la habitación que desea reservar");
     const roomTypeId = findRoomTypeId(selectedRoom, roomTypes);
-    reserveRoom(roomTypeId, rooms);
+    let aux = reserveRoom(roomTypeId, rooms);
+    return aux
 };
 
 const getAvailableRooms = (numPersons, roomTypes) => {
@@ -32,11 +33,10 @@ const reserveRoom = (roomTypeId, rooms) => {
         if (room.roomTypeId === roomTypeId && room.availability === true) {
             room.availability = false;
             console.log(`Habitación reservada:`, room);
-            return; 
+            return room; 
         }
     }
     console.log("No se pudo reservar la habitación seleccionada."); 
 };
 
-export {selectRoom, getAvailableRooms, findRoomTypeId, reserveRoom}
-
+export  {selectRoom};
