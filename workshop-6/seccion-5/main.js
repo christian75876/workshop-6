@@ -29,10 +29,9 @@ getData()
     let selectedRoom = prompt(
       "Ingrese el nombre de la habitacion que desea reservar"
     );
-        
-    return  [roomTypes, selectedRoom];
+    return  [roomTypes, selectedRoom, rooms];
     })
-    .then(([roomTypes, selectedRoom]) => {
+    .then(([roomTypes, selectedRoom, rooms]) => {
       console.log(selectedRoom);
           let findRoom = 0;
         for (let i = 0; i < roomTypes.length; i++) {
@@ -42,8 +41,17 @@ getData()
               break;
             }
           }
+          return [roomTypes, rooms,findRoom]
     })
-  
+    .then(([roomTypes, rooms, findRoom]) => {
+      for (let i = 0; i < rooms.length; i++) {
+        if(rooms[i].roomTypeId === findRoom && (rooms[i].availability === true)){
+          rooms[i].availability = false
+          console.log(rooms[i]);  // Esto es undefine
+          break;
+        }
+      }
+    })
 
 
 
