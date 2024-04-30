@@ -289,7 +289,8 @@ Promise.resolve()
 console.log("Fin del script");
 ```
 
-- Vamos a https://www.jsv9000.app/ y copia y pega el código anterior en la seccion izquierda
+- Vamos a https://www.jsv90
+00.app/ y copia y pega el código anterior en la seccion izquierda
 - Enseguida presiona el boton verde de RUN y observa el resultado en la seccion derecha
 - Después, pulsara el boton verde de Step para ver el orden en que se ejecutan las tareas y observa el resultado en las secciones de task, microtask, callstack y event loop.
 - Finalmente, responde las siguientes preguntas:
