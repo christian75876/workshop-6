@@ -1,13 +1,17 @@
 
 const booking = [];
 
-const reservation = () =>{
+const makeReservation = () =>{
     let name = prompt('Ingresa tu nombre para la reserva');
     let date = prompt('Ingresa la fecha de ingreso ejemplo: DD/MM/YYYY');
     let finalDate = prompt('Ingresa fecha final de la reserva ejemplo: DD/MM/YYYY');
-    let ids = id.generarId();
-    let dataClient = [name, date, finalDate, ids,];
-    return dataClient;
+    let reservationId = id.generarId();
+    return {
+        name,
+        date,
+        finalDate,
+        reservationId
+    };
 }
 
 const id = (() =>{
@@ -21,4 +25,4 @@ const id = (() =>{
     }
 })();
 
-export {reservation}
+export {makeReservation}

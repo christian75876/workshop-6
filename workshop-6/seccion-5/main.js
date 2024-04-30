@@ -1,5 +1,6 @@
 import {selectRoom} from "./funtions/selectRoom.js";
-import { reservation } from "./funtions/id.js";
+import {makeReservation} from "./funtions/id.js";
+import { createReservation } from "./funtions/listReservations.js";
 
 const getData = () => {
   return new Promise((resolve, reject) => {
@@ -19,14 +20,17 @@ const getData = () => {
   });
 };
 
-let client = reservation();
-console.log(client);
-
+let client = makeReservation();
+const listReservations = [];
 
 getData()
   .then(({rooms, roomTypes}) => {
-    let aux = selectRoom(rooms, roomTypes);
-    
+    let room = selectRoom(rooms, roomTypes);
+    return room
+  })
+  .then((room) => {
+    let reservation = createReservation(room,client);
+    listReservations.push(reservation)
   })
 
 
