@@ -31,6 +31,7 @@ getData()
   .then((room) => {
     let reservation = createReservation(room,client);
     listReservations.push(reservation)
+    return 
   })
 
 
