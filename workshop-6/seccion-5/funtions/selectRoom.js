@@ -6,11 +6,13 @@ const selectRoom = (rooms, roomTypes) => {
     const selectedRoom = prompt("Ingrese el nombre de la habitación que desea reservar");
     const roomTypeId = findRoomTypeId(selectedRoom, roomTypes);
     let aux = reserveRoom(roomTypeId, rooms);
+    console.log(rooms)
     return aux
 };
 
-const getAvailableRooms = (numPersons, roomTypes) => {
-    const availableRoomNames = [];
+const availableRoomNames = [];
+
+const getAvailableRooms = (numPersons, roomTypes) => {   
     for (const roomType of roomTypes) {
         if (roomType.capacity >= parseInt(numPersons)) {
             availableRoomNames.push(roomType.name);

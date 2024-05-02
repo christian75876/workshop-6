@@ -27,6 +27,7 @@ const listReservations = [];
 const aux = () => {
   getData()
     .then(({ rooms, roomTypes }) => {
+      if(listReservations.length > 0) client = makeReservation();
       let room = selectRoom(rooms, roomTypes);
       return room;
     })
